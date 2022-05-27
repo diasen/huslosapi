@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_vikanes",
+  "info": {
+    "singularName": "menu-vikane",
+    "pluralName": "menu-vikanes",
+    "displayName": "Menu Vikane"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "allergies": {
+      "type": "string",
+      "required": true
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "menu_vikanes"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "singularName": "restaurant",
+    "pluralName": "restaurants",
+    "displayName": "Restaurant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "adress": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "hours_sarpsborgs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hours-sarpsborg.hours-sarpsborg",
+      "inversedBy": "restaurants"
+    },
+    "menu_sarpsborgs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::menu-sarpsborg.menu-sarpsborg",
+      "inversedBy": "restaurants"
+    },
+    "hours_vikanes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hours-vikane.hours-vikane",
+      "mappedBy": "restaurant"
+    },
+    "hours_manstads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hours-manstad.hours-manstad",
+      "mappedBy": "restaurant"
+    },
+    "menu_vikanes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu-vikane.menu-vikane",
+      "mappedBy": "restaurant"
+    },
+    "menu_manstads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu-manstad.menu-manstad",
+      "mappedBy": "restaurant"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_sarpsborgs",
+  "info": {
+    "singularName": "menu-sarpsborg",
+    "pluralName": "menu-sarpsborgs",
+    "displayName": "Menu Sarpsborg"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "allergies": {
+      "type": "string",
+      "required": true
+    },
+    "restaurants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "menu_sarpsborgs"
+    }
+  }
+}

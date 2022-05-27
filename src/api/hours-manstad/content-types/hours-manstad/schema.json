@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hours_manstads",
+  "info": {
+    "singularName": "hours-manstad",
+    "pluralName": "hours-manstads",
+    "displayName": "Hours Manstad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hours": {
+      "type": "string",
+      "required": true
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "hours_manstads"
+    }
+  }
+}
